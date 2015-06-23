@@ -1,0 +1,81 @@
+<!doctype html>
+
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/dataTables.colVis.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/dataTables.colReorder.css"></link>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/dataTables.colVis.js"></script>
+    <script type="text/javascript" src="js/dataTables.colReorder.js"></script>
+    <script type="text/javascript" src="js/csvParser.js"></script>
+
+    <style>
+        pre {
+            height: 625px;
+            word-wrap: unset;
+        }
+
+        td {
+            max-width: 250px;
+            overflow: auto;
+            white-space: nowrap;
+            vertical-align: middle !important;
+        }
+
+        #files {
+            float: right;
+            margin-top: 10px;
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="file" id="files" name="file" />
+
+    <div>
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active">
+                <a href="#table" aria-controls="table" role="tab" data-toggle="tab">Table</a>
+            </li>
+
+            <li role="presentation">
+                <a href="#csv" aria-controls="csv" role="tab" data-toggle="tab">CSV</a>
+            </li>
+
+            <li role="presentation">
+                <a href="#json" aria-controls="json" role="tab" data-toggle="tab">JSON</a>
+            </li>
+
+            <li role="presentation">
+                <a href="#help" aria-controls="help" role="tab" data-toggle="tab">Help</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="table">
+                <table id="stats" class="table table-striped table-hover"></table>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="csv">
+                <pre>No data to display.</pre>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="json">
+                <pre>No data to display.</pre>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="help">
+                <p>This will take a CSV file and display it as a table, CSV and JSON.</p>
+                <p>For sample content, run the following command in your Windows command prompt and load <code>stats.csv</code> from your desktop.</p>
+                <code>wmic /output:%UserProfile%\Desktop\stats.csv computersystem get /format:csv</code>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

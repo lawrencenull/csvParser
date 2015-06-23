@@ -1,0 +1,16 @@
+{
+  "name": "CSV Parser",
+  "description": "Import a CSV file and display it in a table. Also view it in JSON format.",
+  "version": "0.1",
+  "manifest_version": 2,
+  "app": {
+    "background": {
+      "scripts": [
+        "js/background.js"
+      ]
+    }
+  },
+  "icons": {
+    "16": "images/icon-16.png",
+    "128": "images/icon-128.png" }
+}
